@@ -1,0 +1,10 @@
+<h1>Edit Position <%=@position.id%></h1>
+
+<form action="/position/<%=@position.id %>" method="POST">
+  <label> Position Instrument </label>
+  <input type="text" name="name" value="<%=@position.instrument %>"> 
+  <label> Check the box to mark position as closed </label>
+  <input type="checkbox" name = "close">
+  <input type="submit" value="Update">
+``
+</form>

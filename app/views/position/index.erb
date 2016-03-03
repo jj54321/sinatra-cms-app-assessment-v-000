@@ -1,0 +1,6 @@
+<h1> Here are your positions</h1>
+<%@positions.each do |position| %>
+<li><%= position.id %>: <%= position.instrument %> - <%= position.status %> <a href ='/position/<%= position.id %>'>Click here to view</a> </li>
+<%end%>
+
+<a href = '/position/new'> Click here to add a position</a>
