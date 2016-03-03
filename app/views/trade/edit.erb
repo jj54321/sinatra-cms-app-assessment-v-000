@@ -1,0 +1,21 @@
+<h1>Edit Trade</h1>
+
+<form action="/trade/<%=@trade.id %>" method="POST">
+  <label> Trade Entry </label>
+  <input type="text" name="entry" value="<%=@trade.entry %>"> </br>
+
+  <label> Trade Exit </label>
+  <input type="text" name="exit" value="<%=@trade.exit%>"> </br>
+
+  <label> Trade Profit/Loss </label>
+  <input type="text" name="profit_loss" value="<%=@trade.profit_loss%>"> </br>
+
+  <label> Which position does this belong to? </label>
+  <select name="position_id">
+    <% current_user.positions do |position| %>
+      <option value=<%=position.id %> <%= "selected" if position.id==@trade.position.id %> >Select a position</option>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Update">
+</form>

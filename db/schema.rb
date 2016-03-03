@@ -11,12 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303174135) do
+ActiveRecord::Schema.define(version: 20160303200806) do
 
   create_table "positions", force: :cascade do |t|
     t.string  "status"
     t.string  "instrument"
     t.integer "user_id"
+  end
+
+  create_table "trades", force: :cascade do |t|
+    t.decimal "entry"
+    t.decimal "exit"
+    t.decimal "profit_loss"
+    t.integer "position_id"
   end
 
   create_table "users", force: :cascade do |t|

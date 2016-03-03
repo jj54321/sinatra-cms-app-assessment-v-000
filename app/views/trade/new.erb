@@ -1,0 +1,21 @@
+<h1>Enter your trade below</h1>
+
+<form action="/trade/new" method="POST">
+  <label> Trade Entry </label>
+  <input type="text" name="entry"> </br>
+
+  <label> Trade Exit </label>
+  <input type="text" name="exit"> </br>
+
+  <label> Trade Profit </label>
+  <input type="text" name="profit_loss"> </br>
+
+  <label> Which position is this trade part of? </label>
+  <select name="position_id">
+    <% current_user.positions.each do |position| %>
+      <option value=<%=position.id %>><%= position.instrument %></option>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Create">
+</form>
